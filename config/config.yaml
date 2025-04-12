@@ -1,0 +1,6 @@
+fused_dir: /home/hcj/HCJprogram/FDDB/codes/results/Dehazing/goub/goub-200+3.2+0+2.1_30w
+visible_dir: /home/hcj/HCJprogram/FDDB/dataset/FMBdata-YJF/test/Visible
+infrared_dir: /home/hcj/HCJprogram/FDDB/dataset/FMBdata-YJF/test/Infrared
+batch_size: 8
+num_workers: 4
+gpu_ids: [0]  # 指定要使用的 GPU 编号，若为空则使用所有可用 GPU    
