@@ -1,6 +1,6 @@
-fused_dir: /home/hcj/HCJprogram/FDDB/codes/results/Dehazing/goub/goub-200+3.2+0+2.1_30w
-visible_dir: /home/hcj/HCJprogram/FDDB/dataset/FMBdata-YJF/test/Visible
-infrared_dir: /home/hcj/HCJprogram/FDDB/dataset/FMBdata-YJF/test/Infrared
+fused_dir: ~ # 替换为你的融合结果文件夹路径
+visible_dir: ~ # 替换为你的可见光文件夹路径
+infrared_dir: ~ # 替换为你的红外文件夹路径
 batch_size: 8
 num_workers: 4
-gpu_ids: [0]  # 指定要使用的 GPU 编号，若为空则使用所有可用 GPU    
+gpu_ids: [0，1] # 指定要使用的 GPU 编号，若为空则使用所有可用 GPU

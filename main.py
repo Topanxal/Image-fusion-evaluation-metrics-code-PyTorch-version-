@@ -26,7 +26,7 @@ from metrics.nabf_metric import NabfMetric
 from metrics.ms_ssim_metric import MSSSIMMetric
 
 
-def main(fused_dir):
+def main():
     # 读取配置文件
     with open('config/config.yaml', 'r') as f:
         config = yaml.safe_load(f)
@@ -34,10 +34,9 @@ def main(fused_dir):
     # 初始化 GPU
     gpu_ids = config.get('gpu_ids', [])
     device = init_gpu(gpu_ids)
-
-    version = fused_dir.split('/')[-1]
+   
     # 加载数据
-    dataloader = get_dataloader(fused_dir, config['visible_dir'], config['infrared_dir'],
+    dataloader = get_dataloader(config['fused_dir'], config['visible_dir'], config['infrared_dir'],
                                 config['batch_size'], config['num_workers'])
 
     # 初始化指标类
@@ -98,7 +97,7 @@ def main(fused_dir):
     df = df.drop(columns='number')
 
     # 保存结果
-    df.to_csv(f'results/{version}.csv', index=False)
+    df.to_csv(f'results/metrics.csv', index=False)
 
 
 def get_subfolder_paths(folder_path):
@@ -120,7 +119,7 @@ def get_subfolder_paths(folder_path):
 
 
 if __name__ == "__main__":
-    target_folder = "/home/hcj/HCJprogram/FDDB/codes/results/Dehazing/4-9_2rd"  # 替换为你的目标文件夹路径
+    target_folder = " "  # 替换为你的目标文件夹路径
     subfolders = get_subfolder_paths(target_folder)
     
     print("找到的子文件夹：")
